@@ -51,26 +51,30 @@ python tts.py --speed 0.95
 Then re-run `./build.sh`. Scenes stretch or shrink automatically to the new clip
 lengths.
 
-## Adding real artwork images
+## Artwork images
 
-Every artwork appears as a framed card. Without an image, the card shows a
-simplified vector sketch or a generic icon. To use a real picture, drop a file
-named `<slug>.jpg` (or `.png`) into `assets/artworks/` and re-render. Please only
-use images you're allowed to use. Good public-domain sources include Wikimedia
-Commons and the open-access collections of the Met, Rijksmuseum, Art Institute of
-Chicago and National Gallery of Art. Many 20th-century works (Picasso, Dalí, Kahlo,
-Magritte, Rothko, Warhol, Kusama, Basquiat...) are still under copyright, so keep
-the vector versions for those unless you have permission.
+`fetch_art.py` downloads 34 public-domain images from The Metropolitan Museum
+of Art's open-access collection, using its public Google Cloud mirror
+(`gs://gcs-public-data--met`), into `assets/artworks/`. Credits are in
+`assets/artworks/credits.json`.
 
-Slugs: `lion_man sulawesi willendorf gobekli_tepe nefertiti standard_of_ur
-hammurabi shang_bronze olmec nok kritios_boy doryphoros augustus pantheon pompeii
-terracotta_army gandhara_buddha book_of_kells chartres fan_kuan ajanta nataraja
-ife_head giotto arnolfini last_supper mona_lisa david sistine school_of_athens
-durer bernini_teresa night_watch vermeer_pearl horatii goya_third_may
-friedrich_wanderer raft_medusa delacroix_liberty courbet_stonebreakers
-manet_dejeuner manet_olympia monet_impression hokusai_wave starry_night cezanne
-munch_scream demoiselles af_klint kandinsky black_square fountain magritte_pipe
-dali kahlo guernica rothko abramovic spiral_jetty kusama basquiat`
+The Met doesn't own most of the famous works the narration names, so many cards
+show a closely related Met piece instead: a Vermeer for *Girl with a Pearl
+Earring*, Van Gogh's *Wheat Field with Cypresses* (1889) for *The Starry Night*,
+Munch's 1895 lithograph of *The Scream*, and so on. **Each card's caption
+describes the object actually shown** and ends with "The Met". Works with no
+suitable public-domain image keep a vector sketch, including everything still
+under copyright (Picasso, Dalí, Kahlo, Magritte, Rothko, Warhol, Kusama,
+Basquiat...).
+
+To swap in your own image, put `<slug>.jpg` (or `.png`) in `assets/artworks/`.
+To give it a matching caption, add an entry to `credits.json`. Otherwise the
+card keeps the caption written in `scenes.py`. Remaining vector slugs:
+`lion_man sulawesi willendorf gobekli_tepe nok kritios_boy terracotta_army
+gandhara_buddha book_of_kells ajanta nataraja last_supper david
+school_of_athens goya_third_may raft_medusa demoiselles af_klint kandinsky
+black_square fountain magritte_pipe dali kahlo guernica rothko abramovic
+spiral_jetty kusama basquiat`
 
 ## Accuracy notes
 

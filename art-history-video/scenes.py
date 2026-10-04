@@ -191,7 +191,7 @@ def sculpture_head(color="#B08D57"):
 
 
 def colossal_head():
-    helmet = Arc(radius=0.75, start_angle=0, angle=PI, fill_color="#6E6A60", fill_opacity=1, stroke_width=0).shift(0.2 * UP)
+    helmet = Arc(radius=0.75, start_angle=0, angle=PI, fill_color="#6E6A60", fill_opacity=1, stroke_width=0).shift(0.3 * DOWN)
     face = RoundedRectangle(corner_radius=0.3, width=1.5, height=1.4, fill_color="#8A857A", fill_opacity=1, stroke_width=0).shift(0.35 * DOWN)
     eyes = VGroup(Ellipse(width=0.3, height=0.12, color=BLACK, fill_opacity=1).shift(0.3 * LEFT),
                   Ellipse(width=0.3, height=0.12, color=BLACK, fill_opacity=1).shift(0.3 * RIGHT))
@@ -327,10 +327,10 @@ class Ch01(NarratedScene):
         self.play(FadeOut(ochre), FadeOut(cap), run_time=0.6)
 
         lion = art_card("Lion-Man of Hohlenstein-Stadel", "mammoth ivory", "c. 40,000 years ago",
-                        slug="lion_man", kind="sculpture").shift(0.3 * UP)
+                        slug="lion_man", kind="sculpture", w=3.0, h=3.0).shift(0.3 * UP)
         self.say("p3", Indicate(ticks[2]), FadeIn(lion, shift=UP * 0.2))
         sul = art_card("Narrative scene, Leang Karampuang", "Sulawesi, Indonesia", "at least 51,200 years ago*",
-                       slug="sulawesi").shift(0.3 * UP)
+                       slug="sulawesi", w=3.0, h=3.0).shift(0.3 * UP)
         note = para("* earliest known, as dated in 2024. Dates keep moving.", 20, 3.2, C_GREY).next_to(sul, RIGHT, buff=0.5)
         self.say("p4", FadeOut(lion), Indicate(ticks[1]), FadeIn(sul), Write(note))
         self.play(FadeOut(sul), FadeOut(note), run_time=0.6)
@@ -354,8 +354,8 @@ class Ch01(NarratedScene):
         self.play(FadeOut(hand), run_time=0.6)
 
         cards = card_row(
-            art_card("Venus of Willendorf", "limestone", "c. 30,000 years ago", slug="willendorf", kind="sculpture"),
-            art_card("Göbekli Tepe pillars", "Turkey", "c. 11,500 years ago", slug="gobekli_tepe", kind="building"),
+            art_card("Venus of Willendorf", "limestone", "c. 30,000 years ago", slug="willendorf", kind="sculpture", w=3.0, h=3.0),
+            art_card("Göbekli Tepe pillars", "Turkey", "c. 11,500 years ago", slug="gobekli_tepe", kind="building", w=3.0, h=3.0),
         ).shift(0.3 * UP)
         self.say("p7", *show_cards(*cards))
         self.play(FadeOut(cards), run_time=0.6)
@@ -405,7 +405,7 @@ class Ch02(NarratedScene):
         self.play(FadeOut(grid), FadeOut(fig), run_time=0.6)
 
         nef = art_card("Bust of Nefertiti", "Thutmose (attrib.)", "c. 1345 BCE", slug="nefertiti",
-                       motif=sculpture_head("#C9A27A")).shift(0.2 * UP)
+                       motif=sculpture_head("#C9A27A")).shift(0.3 * DOWN)
         self.say("e6", FadeIn(nef))
         self.play(FadeOut(nef), run_time=0.5)
         cards = card_row(
@@ -414,7 +414,7 @@ class Ch02(NarratedScene):
             art_card("Shang ritual bronze", "China", "c. 1600-1046 BCE", slug="shang_bronze", kind="sculpture", w=2.2, h=2.2),
             art_card("Olmec colossal head", "Mexico", "c. 1200-900 BCE", slug="olmec", motif=colossal_head(), w=2.2, h=2.2),
             art_card("Nok terracotta", "Nigeria", "1st millennium BCE", slug="nok", motif=sculpture_head("#A0522D"), w=2.2, h=2.2),
-            buff=0.5).shift(0.2 * UP)
+            buff=0.5).shift(0.3 * DOWN)
         self.say("e7", LaggedStart(*show_cards(*cards), lag_ratio=0.5, run_time=4))
         self.clear_all()
 
@@ -430,7 +430,9 @@ class Ch03(NarratedScene):
         body, hip, sh = stick_body(0)
         fig = VGroup(body, hip, sh).shift(2.5 * LEFT + 0.2 * DOWN)
         kouros = T("Kouros, c. 600 BCE", 24, C_GREY).next_to(fig, DOWN)
-        self.say("g1", Create(body, run_time=2), FadeIn(kouros))
+        kcard = art_card("Kouros", "", "c. 600 BCE", slug="kouros", kind="sculpture", w=2.4, h=3.2).shift(2.8 * RIGHT + 0.1 * DOWN)
+        self.say("g1", Create(body, run_time=2), FadeIn(kouros), FadeIn(kcard, shift=0.2 * UP))
+        self.play(FadeOut(kcard), run_time=0.5)
         self.say("g2", Create(hip), Create(sh), [Indicate(hip), Indicate(sh)])
 
         body2, hip2, sh2 = stick_body(1)
@@ -473,13 +475,13 @@ class Ch03(NarratedScene):
             art_card("Augustus of Prima Porta", "", "early 1st c. CE", slug="augustus", kind="sculpture", w=2.4, h=2.6),
             art_card("Pantheon dome", "Rome", "c. 113-125 CE", slug="pantheon", kind="building", w=2.4, h=2.6),
             art_card("Wall painting, Pompeii", "", "before 79 CE", slug="pompeii", w=2.4, h=2.6),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("g7", LaggedStart(*show_cards(*cards), lag_ratio=0.4, run_time=3))
         self.play(FadeOut(cards), run_time=0.5)
         cards = card_row(
             art_card("Terracotta Army", "Qin dynasty, China", "c. 210 BCE", slug="terracotta_army", kind="sculpture"),
             art_card("Standing Buddha", "Gandhara", "c. 2nd-3rd c. CE", slug="gandhara_buddha", kind="sculpture"),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("g8", *show_cards(*cards), dials.set_space(0.65, run_time=2))
         self.clear_all()
 
@@ -510,7 +512,7 @@ class Ch04(NarratedScene):
         cards = card_row(
             art_card("Book of Kells", "Insular", "c. 800", slug="book_of_kells", kind="book"),
             art_card("Chartres Cathedral glass", "France", "c. 1194-1220", slug="chartres", motif=rose_window()),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("f4", dials.set_label("purpose", "the Church"), *show_cards(*cards))
         self.play(FadeOut(cards), run_time=0.5)
 
@@ -526,7 +528,7 @@ class Ch04(NarratedScene):
             art_card("Ajanta cave paintings", "India", "c. 2nd c. BCE-5th c. CE", slug="ajanta", w=2.4, h=2.4),
             art_card("Shiva Nataraja", "Chola bronze", "c. 11th c.", slug="nataraja", kind="sculpture", w=2.4, h=2.4),
             art_card("Ife head", "Nigeria", "c. 12th-15th c.", slug="ife_head", motif=sculpture_head(), w=2.4, h=2.4),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("f6", LaggedStart(*show_cards(*cards), lag_ratio=0.6, run_time=5))
         self.clear_all()
 
@@ -538,7 +540,7 @@ class Ch05(NarratedScene):
         show_chapter_card(self, 5, "The Renaissance: the window")
         dials = corner_dials(0.25, "the Church", "fresco, tempera")
         self.add(dials)
-        giotto = art_card("Arena (Scrovegni) Chapel frescoes", "Giotto", "c. 1305", slug="giotto").shift(0.2 * UP)
+        giotto = art_card("Arena (Scrovegni) Chapel frescoes", "Giotto", "c. 1305", slug="giotto").shift(0.3 * DOWN)
         self.say("r1", FadeIn(giotto), dials.set_space(0.4))
         self.play(FadeOut(giotto), run_time=0.5)
 
@@ -611,7 +613,7 @@ class Ch05(NarratedScene):
 
         dials = corner_dials(0.85, "the Church", "fresco, tempera")
         self.add(dials)
-        arn = art_card("Arnolfini Portrait", "Jan van Eyck", "1434", slug="arnolfini", motif=convex_mirror()).shift(0.2 * UP)
+        arn = art_card("Arnolfini Portrait", "Jan van Eyck", "1434", slug="arnolfini", motif=convex_mirror()).shift(0.3 * DOWN)
         self.say("r8", FadeIn(arn), dials.set_label("medium", "oil paint, fresco"))
         self.play(FadeOut(arn), run_time=0.5)
 
@@ -624,7 +626,7 @@ class Ch05(NarratedScene):
             buff=0.4).shift(0.5 * UP)
         self.say("r9", LaggedStart(*show_cards(*cards), lag_ratio=0.8, run_time=8), dials.set_space(0.9))
         self.play(FadeOut(cards), run_time=0.5)
-        durer = art_card("Draughtsman drawing a reclining nude", "Albrecht Dürer, woodcut", "1525", slug="durer").shift(0.2 * UP)
+        durer = art_card("Draughtsman drawing a reclining nude", "Albrecht Dürer, woodcut", "1525", slug="durer").shift(0.3 * DOWN)
         self.say("r10", dials.set_label("purpose", "Church & merchants"), FadeIn(durer),
                  dials.set_label("medium", "oil, fresco, print"))
         self.clear_all()
@@ -650,17 +652,19 @@ class Ch06(NarratedScene):
         for f, c in zip(lit, ["#C9A27A", "#B08D57", "#8A6E4B"]):
             f.set_fill(c, 1)
         cap = T("The Calling of Saint Matthew, Caravaggio, 1599-1600", 22, C_GREY).next_to(stage, DOWN, buff=0.15)
-        self.say("b2", FadeIn(stage), FadeIn(figs), FadeIn(beam), Transform(figs, lit, run_time=2), FadeIn(cap))
-        self.play(FadeOut(VGroup(stage, figs, beam, cap)), run_time=0.5)
+        denial = art_card("The Denial of Saint Peter", "Caravaggio", "1610", slug="caravaggio", w=4.2, h=3.2).shift(0.3 * DOWN)
+        self.say("b2", FadeIn(stage), FadeIn(figs), FadeIn(beam), Transform(figs, lit, run_time=2), FadeIn(cap), 2,
+                 [FadeOut(VGroup(stage, figs, beam, cap)), FadeIn(denial)])
+        self.play(FadeOut(denial), run_time=0.5)
 
         bern = art_card("Ecstasy of Saint Teresa", "Gian Lorenzo Bernini", "1647-52", slug="bernini_teresa",
-                        kind="sculpture").shift(0.2 * UP)
+                        kind="sculpture").shift(0.3 * DOWN)
         self.say("b3", FadeIn(bern), dials.set_label("purpose", "Church (Counter-Reformation)"))
         self.play(FadeOut(bern), run_time=0.5)
         cards = card_row(
             art_card("The Night Watch", "Rembrandt", "1642", slug="night_watch", w=3.4, h=2.6),
             art_card("Girl with a Pearl Earring", "Johannes Vermeer", "c. 1665", slug="vermeer_pearl", w=2.2, h=2.6),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("b4", dials.set_label("purpose", "an open art market"), *show_cards(*cards))
         self.play(FadeOut(cards), run_time=0.5)
 
@@ -693,7 +697,7 @@ class Ch07(NarratedScene):
         show_chapter_card(self, 7, "Revolutions")
         dials = corner_dials(0.9, "an open art market", "oil, fresco, print")
         self.add(dials)
-        david = art_card("Oath of the Horatii", "Jacques-Louis David", "1784", slug="horatii").shift(0.2 * UP)
+        david = art_card("Oath of the Horatii", "Jacques-Louis David", "1784", slug="horatii").shift(0.3 * DOWN)
         self.say("v1", FadeIn(david), dials.set_label("purpose", "the nation, the public"))
         self.play(FadeOut(david), run_time=0.5)
         cards = card_row(
@@ -701,10 +705,10 @@ class Ch07(NarratedScene):
             art_card("Wanderer above the Sea of Fog", "Caspar David Friedrich", "c. 1818", slug="friedrich_wanderer", w=1.8, h=2.3),
             art_card("The Raft of the Medusa", "Théodore Géricault", "1818-19", slug="raft_medusa", w=2.6, h=2.0),
             art_card("Liberty Leading the People", "Eugène Delacroix", "1830", slug="delacroix_liberty", w=2.6, h=2.0),
-            buff=0.4).shift(0.2 * UP)
+            buff=0.4).shift(0.3 * DOWN)
         self.say("v2", LaggedStart(*show_cards(*cards), lag_ratio=0.9, run_time=8))
         self.play(FadeOut(cards), run_time=0.5)
-        cour = art_card("The Stone Breakers", "Gustave Courbet", "1849 (destroyed 1945)", slug="courbet_stonebreakers").shift(0.2 * UP)
+        cour = art_card("The Stone Breakers", "Gustave Courbet", "1849 (destroyed 1945)", slug="courbet_stonebreakers").shift(0.3 * DOWN)
         self.say("v3", FadeIn(cour))
         self.play(FadeOut(cour), run_time=0.5)
 
@@ -729,7 +733,7 @@ class Ch07(NarratedScene):
         rays = VGroup(Line(top, through(top), color=C_YELLOW, stroke_width=2), Line(bot, through(bot), color=C_YELLOW, stroke_width=2))
         img = tree_.copy().rotate(PI).scale(0.6)
         img.move_to([box.get_right()[0] - 0.3, (through(top)[1] + through(bot)[1]) / 2, 0])
-        lbl = T("camera obscura: light through a small hole", 24, C_GREY).to_edge(UP, buff=1.0)
+        lbl = T("camera obscura: light through a small hole", 24, C_GREY).to_corner(UL, buff=0.5)
         self.say("v5", FadeIn(tree_), Create(box), FadeIn(hole), FadeIn(lbl), Create(rays, run_time=2), FadeIn(img))
         self.play(FadeOut(VGroup(box, hole, tree_, rays, img, lbl)), run_time=0.5)
         q = T("So, what is painting for now?", 48, C_YELLOW)
@@ -747,7 +751,7 @@ class Ch08(NarratedScene):
         cards = card_row(
             art_card("Le Déjeuner sur l'herbe", "Édouard Manet", "1863", slug="manet_dejeuner", w=3.0, h=2.3),
             art_card("Olympia", "Édouard Manet", "1863", slug="manet_olympia", w=3.0, h=2.0),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("m1", *show_cards(*cards), dials.set_space(0.6))
         self.play(FadeOut(cards), run_time=0.5)
 
@@ -758,7 +762,7 @@ class Ch08(NarratedScene):
         self.say("m2", FadeIn(tube, shift=RIGHT), FadeIn(tl), dials.set_label("medium", "tube paint, outdoors"))
         self.play(FadeOut(tube), FadeOut(tl), run_time=0.5)
 
-        imp = art_card("Impression, Sunrise", "Claude Monet", "1872", slug="monet_impression", motif=sunrise()).shift(0.2 * UP)
+        imp = art_card("Impression, Sunrise", "Claude Monet", "1872", slug="monet_impression", motif=sunrise()).shift(0.3 * DOWN)
         self.say("m3", FadeIn(imp), dials.set_label("purpose", "the artist's eye"))
         self.play(FadeOut(imp), run_time=0.5)
 
@@ -773,26 +777,28 @@ class Ch08(NarratedScene):
         rng = np.random.default_rng(2)
         dots = VGroup()
         for i in range(30):
-            for j in range(18):
+            for j in range(15):
                 x, y = -4.35 + 0.3 * i, -2.55 + 0.3 * j
                 in_sun = (x - 1.5) ** 2 + (y - 0.8) ** 2 < 1.0
                 pal = ["#FF9500", "#FFCC00", "#FF3B30"] if in_sun else (["#5AC8FA", "#4CD964", "#5856D6"] if y < -0.5 else ["#5AC8FA", "#5856D6", "#FFFFFF"])
                 dots.add(Dot([x, y, 0], radius=0.11, color=pal[rng.integers(3)]))
         dots.shift(0.3 * DOWN)
         jatte = T("A Sunday on La Grande Jatte, Georges Seurat, 1884-86", 22, C_GREY).to_edge(DOWN, buff=0.15)
+        study = art_card("Study for A Sunday on La Grande Jatte", "Georges Seurat", "1884", slug="seurat_jatte",
+                         w=4.0, h=2.8).shift(1.8 * RIGHT + 0.2 * UP)
         self.say("m5", LaggedStart(*[FadeIn(d) for d in dots], lag_ratio=0.003, run_time=3), FadeIn(jatte),
-                 dots.animate(run_time=2.5).scale(0.25))
-        self.play(FadeOut(dots), FadeOut(jatte), run_time=0.5)
+                 dots.animate(run_time=2.5).scale(0.25).shift(3.5 * LEFT), [FadeOut(jatte), FadeIn(study)])
+        self.play(FadeOut(dots), FadeOut(study), run_time=0.5)
 
         wave = art_card("The Great Wave off Kanagawa", "Katsushika Hokusai", "c. 1831", slug="hokusai_wave",
-                        motif=great_wave()).shift(0.2 * UP)
+                        motif=great_wave()).shift(0.3 * DOWN)
         self.say("m6", FadeIn(wave), dials.set_space(0.45))
         self.play(FadeOut(wave), run_time=0.5)
         cards = card_row(
             art_card("The Starry Night", "Vincent van Gogh", "1889", slug="starry_night", motif=starry_night(), w=2.8, h=2.3),
             art_card("Mont Sainte-Victoire", "Paul Cézanne", "c. 1902-06", slug="cezanne", motif=cezanne_shapes(), w=2.8, h=2.3),
             art_card("The Scream", "Edvard Munch", "1893", slug="munch_scream", motif=scream(), w=2.2, h=2.6),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("m7", LaggedStart(*show_cards(*cards), lag_ratio=1.0, run_time=9))
         self.clear_all()
 
@@ -804,7 +810,7 @@ class Ch09(NarratedScene):
         show_chapter_card(self, 9, "The picture becomes the idea")
         dials = corner_dials(0.45, "the artist's eye", "tube paint, outdoors")
         self.add(dials)
-        dem = art_card("Les Demoiselles d'Avignon", "Pablo Picasso", "1907", slug="demoiselles").shift(0.2 * UP)
+        dem = art_card("Les Demoiselles d'Avignon", "Pablo Picasso", "1907", slug="demoiselles").shift(0.3 * DOWN)
         self.say("c1", FadeIn(dem))
         self.play(FadeOut(dem), run_time=0.5)
 
@@ -848,21 +854,21 @@ class Ch09(NarratedScene):
             art_card("The Ten Largest (series)", "Hilma af Klint", "1907", slug="af_klint", w=2.2, h=2.8),
             art_card("Composition VII", "Wassily Kandinsky", "1913", slug="kandinsky", w=2.8, h=2.2),
             art_card("Black Square", "Kazimir Malevich", "1915", slug="black_square", motif=black_square(), w=2.4, h=2.4),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("c5", LaggedStart(*show_cards(*cards), lag_ratio=0.8, run_time=6), dials.set_space(0.0, run_time=2))
         self.play(FadeOut(cards), run_time=0.5)
 
-        fnt = art_card("Fountain", "Marcel Duchamp (attribution debated)", "1917", slug="fountain", motif=fountain()).shift(0.2 * UP)
+        fnt = art_card("Fountain", "Marcel Duchamp (attribution debated)", "1917", slug="fountain", motif=fountain()).shift(0.3 * DOWN)
         self.say("c6", FadeIn(fnt), dials.set_label("purpose", "the idea"), dials.set_label("medium", "anything at all"))
         self.play(FadeOut(fnt), run_time=0.5)
-        pp = art_card("The Treachery of Images", "René Magritte", "1929", slug="magritte_pipe", motif=pipe(), w=3.6, h=3.0).shift(0.2 * UP)
+        pp = art_card("The Treachery of Images", "René Magritte", "1929", slug="magritte_pipe", motif=pipe(), w=3.6, h=3.0).shift(0.3 * DOWN)
         self.say("c7", FadeIn(pp))
         self.play(FadeOut(pp), run_time=0.5)
         cards = card_row(
             art_card("The Persistence of Memory", "Salvador Dalí", "1931", slug="dali", w=2.6, h=2.0),
             art_card("The Two Fridas", "Frida Kahlo", "1939", slug="kahlo", w=2.4, h=2.4),
             art_card("Guernica", "Pablo Picasso", "1937", slug="guernica", w=3.4, h=1.6),
-        ).shift(0.2 * UP)
+        ).shift(0.3 * DOWN)
         self.say("c8", LaggedStart(*show_cards(*cards), lag_ratio=1.0, run_time=7))
         self.clear_all()
 
@@ -878,7 +884,7 @@ class Ch10(NarratedScene):
         cap = T("Jackson Pollock, drip paintings, 1947-50", 22, C_GREY).next_to(d, DOWN)
         self.say("a1", FadeIn(d[0]), Create(d[1], lag_ratio=0.15, run_time=5), FadeIn(cap))
         self.play(FadeOut(d), FadeOut(cap), run_time=0.5)
-        r = art_card("Color field painting", "Mark Rothko", "1950s", slug="rothko", motif=rothko()).shift(0.2 * UP)
+        r = art_card("Color field painting", "Mark Rothko", "1950s", slug="rothko", motif=rothko()).shift(0.3 * DOWN)
         self.say("a2", FadeIn(r))
         self.play(FadeOut(r), run_time=0.5)
 
@@ -916,7 +922,7 @@ class Ch10(NarratedScene):
             art_card("Spiral Jetty", "Robert Smithson", "1970", slug="spiral_jetty", motif=spiral_jetty(), w=2.3, h=2.3),
             art_card("Infinity Mirror Rooms", "Yayoi Kusama", "from 1965", slug="kusama", motif=kusama_dots(), w=2.3, h=2.3),
             art_card("Paintings", "Jean-Michel Basquiat", "early 1980s", slug="basquiat", motif=crown(), w=2.3, h=2.3),
-            buff=0.5).shift(0.2 * UP)
+            buff=0.5).shift(0.3 * DOWN)
         self.say("a5", LaggedStart(*show_cards(*cards), lag_ratio=0.9, run_time=7))
         self.clear_all()
 
@@ -931,7 +937,7 @@ class Ch11(NarratedScene):
         self.say("n1", dials.set_label("purpose", "ideas, markets, the public"), dials.set_label("medium", "video, digital, internet"))
 
         frame = Rectangle(width=2.6, height=3.2, color=C_GOLD, stroke_width=6).shift(0.9 * UP)
-        bal = heart_balloon().move_to(frame).shift(0.2 * UP)
+        bal = heart_balloon().move_to(frame).shift(0.3 * DOWN)
         canvas = VGroup(Rectangle(width=2.5, height=3.1, fill_color="#EEE", fill_opacity=1, stroke_width=0).move_to(frame), bal)
         strips = VGroup(*[canvas.copy() for _ in range(1)])
         cap = T("Girl with Balloon / Love Is in the Bin, Banksy, 2018", 22, C_GREY).to_edge(DOWN, buff=0.3)

@@ -1,0 +1,240 @@
+{
+ "kouros": {
+  "title": "Marble statue of a kouros",
+  "artist": "Greek, Attic",
+  "date": "c. 590-580 BCE",
+  "source": "The Metropolitan Museum of Art, object 253370",
+  "url": "https://www.metmuseum.org/art/collection/search/253370"
+ },
+ "nefertiti": {
+  "title": "Relief of Queen Nefertiti",
+  "artist": "Egypt, Amarna period",
+  "date": "c. 1353-1336 BCE",
+  "source": "The Metropolitan Museum of Art, object 545803",
+  "url": "https://www.metmuseum.org/art/collection/search/545803"
+ },
+ "standard_of_ur": {
+  "title": "Headdress, Royal Cemetery at Ur",
+  "artist": "Sumerian",
+  "date": "c. 2600-2500 BCE",
+  "source": "The Metropolitan Museum of Art, object 322903",
+  "url": "https://www.metmuseum.org/art/collection/search/322903"
+ },
+ "hammurabi": {
+  "title": "Statue of Gudea",
+  "artist": "Neo-Sumerian",
+  "date": "c. 2090 BCE",
+  "source": "The Metropolitan Museum of Art, object 329072",
+  "url": "https://www.metmuseum.org/art/collection/search/329072"
+ },
+ "shang_bronze": {
+  "title": "Ritual altar set",
+  "artist": "Shang dynasty, China",
+  "date": "late 11th c. BCE",
+  "source": "The Metropolitan Museum of Art, object 76974",
+  "url": "https://www.metmuseum.org/art/collection/search/76974"
+ },
+ "olmec": {
+  "title": "Mask",
+  "artist": "Olmec, Mexico",
+  "date": "900-400 BCE",
+  "source": "The Metropolitan Museum of Art, object 310279",
+  "url": "https://www.metmuseum.org/art/collection/search/310279"
+ },
+ "doryphoros": {
+  "title": "Diadoumenos, after Polykleitos",
+  "artist": "Roman copy",
+  "date": "1st-2nd c. CE",
+  "source": "The Metropolitan Museum of Art, object 246991",
+  "url": "https://www.metmuseum.org/art/collection/search/246991"
+ },
+ "augustus": {
+  "title": "Portrait of the emperor Augustus",
+  "artist": "Roman, marble",
+  "date": "c. 14-37 CE",
+  "source": "The Metropolitan Museum of Art, object 247993",
+  "url": "https://www.metmuseum.org/art/collection/search/247993"
+ },
+ "pantheon": {
+  "title": "The Pantheon",
+  "artist": "etching by G. B. Piranesi",
+  "date": "18th c.",
+  "source": "The Metropolitan Museum of Art, object 348799",
+  "url": "https://www.metmuseum.org/art/collection/search/348799"
+ },
+ "pompeii": {
+  "title": "Cubiculum from a villa at Boscoreale",
+  "artist": "Roman wall painting",
+  "date": "c. 50-40 BCE",
+  "source": "The Metropolitan Museum of Art, object 247017",
+  "url": "https://www.metmuseum.org/art/collection/search/247017"
+ },
+ "chartres": {
+  "title": "Stained glass, Legend of St. Vincent",
+  "artist": "French",
+  "date": "c. 1245-47",
+  "source": "The Metropolitan Museum of Art, object 466580",
+  "url": "https://www.metmuseum.org/art/collection/search/466580"
+ },
+ "fan_kuan": {
+  "title": "Landscape in the style of Fan Kuan",
+  "artist": "China, Northern Song",
+  "date": "early 12th c.",
+  "source": "The Metropolitan Museum of Art, object 40002",
+  "url": "https://www.metmuseum.org/art/collection/search/40002"
+ },
+ "ife_head": {
+  "title": "Head of an Oba",
+  "artist": "Edo artist, Benin",
+  "date": "16th c.",
+  "source": "The Metropolitan Museum of Art, object 312290",
+  "url": "https://www.metmuseum.org/art/collection/search/312290"
+ },
+ "giotto": {
+  "title": "The Adoration of the Magi",
+  "artist": "Giotto",
+  "date": "possibly c. 1320",
+  "source": "The Metropolitan Museum of Art, object 436504",
+  "url": "https://www.metmuseum.org/art/collection/search/436504"
+ },
+ "arnolfini": {
+  "title": "The Crucifixion; The Last Judgment",
+  "artist": "Jan van Eyck",
+  "date": "c. 1440-41",
+  "source": "The Metropolitan Museum of Art, object 436282",
+  "url": "https://www.metmuseum.org/art/collection/search/436282"
+ },
+ "mona_lisa": {
+  "title": "Head of the Virgin (study)",
+  "artist": "Leonardo da Vinci",
+  "date": "1510-13",
+  "source": "The Metropolitan Museum of Art, object 337496",
+  "url": "https://www.metmuseum.org/art/collection/search/337496"
+ },
+ "sistine": {
+  "title": "Studies for the Libyan Sibyl",
+  "artist": "Michelangelo",
+  "date": "c. 1510-11",
+  "source": "The Metropolitan Museum of Art, object 337497",
+  "url": "https://www.metmuseum.org/art/collection/search/337497"
+ },
+ "durer": {
+  "title": "Draughtsman Drawing a Reclining Woman",
+  "artist": "after Albrecht Dürer",
+  "date": "design 1525",
+  "source": "The Metropolitan Museum of Art, object 366555",
+  "url": "https://www.metmuseum.org/art/collection/search/366555"
+ },
+ "caravaggio": {
+  "title": "The Denial of Saint Peter",
+  "artist": "Caravaggio",
+  "date": "1610",
+  "source": "The Metropolitan Museum of Art, object 437986",
+  "url": "https://www.metmuseum.org/art/collection/search/437986"
+ },
+ "bernini_teresa": {
+  "title": "Bacchanal: A Faun Teased by Children",
+  "artist": "Gian Lorenzo Bernini",
+  "date": "c. 1616-17",
+  "source": "The Metropolitan Museum of Art, object 206399",
+  "url": "https://www.metmuseum.org/art/collection/search/206399"
+ },
+ "night_watch": {
+  "title": "Self-Portrait",
+  "artist": "Rembrandt",
+  "date": "1660",
+  "source": "The Metropolitan Museum of Art, object 437397",
+  "url": "https://www.metmuseum.org/art/collection/search/437397"
+ },
+ "vermeer_pearl": {
+  "title": "Study of a Young Woman",
+  "artist": "Johannes Vermeer",
+  "date": "c. 1665-67",
+  "source": "The Metropolitan Museum of Art, object 437879",
+  "url": "https://www.metmuseum.org/art/collection/search/437879"
+ },
+ "horatii": {
+  "title": "The Death of Socrates",
+  "artist": "Jacques-Louis David",
+  "date": "1787",
+  "source": "The Metropolitan Museum of Art, object 436105",
+  "url": "https://www.metmuseum.org/art/collection/search/436105"
+ },
+ "friedrich_wanderer": {
+  "title": "Two Men Contemplating the Moon",
+  "artist": "Caspar David Friedrich",
+  "date": "c. 1825-30",
+  "source": "The Metropolitan Museum of Art, object 438417",
+  "url": "https://www.metmuseum.org/art/collection/search/438417"
+ },
+ "delacroix_liberty": {
+  "title": "The Abduction of Rebecca",
+  "artist": "Eugène Delacroix",
+  "date": "1846",
+  "source": "The Metropolitan Museum of Art, object 438814",
+  "url": "https://www.metmuseum.org/art/collection/search/438814"
+ },
+ "courbet_stonebreakers": {
+  "title": "Young Ladies of the Village",
+  "artist": "Gustave Courbet",
+  "date": "1851-52",
+  "source": "The Metropolitan Museum of Art, object 438820",
+  "url": "https://www.metmuseum.org/art/collection/search/438820"
+ },
+ "manet_dejeuner": {
+  "title": "Boating",
+  "artist": "Édouard Manet",
+  "date": "1874",
+  "source": "The Metropolitan Museum of Art, object 436947",
+  "url": "https://www.metmuseum.org/art/collection/search/436947"
+ },
+ "manet_olympia": {
+  "title": "Young Lady in 1866",
+  "artist": "Édouard Manet",
+  "date": "1866",
+  "source": "The Metropolitan Museum of Art, object 436964",
+  "url": "https://www.metmuseum.org/art/collection/search/436964"
+ },
+ "monet_impression": {
+  "title": "Bridge over a Pond of Water Lilies",
+  "artist": "Claude Monet",
+  "date": "1899",
+  "source": "The Metropolitan Museum of Art, object 437127",
+  "url": "https://www.metmuseum.org/art/collection/search/437127"
+ },
+ "seurat_jatte": {
+  "title": "Study for A Sunday on La Grande Jatte",
+  "artist": "Georges Seurat",
+  "date": "1884",
+  "source": "The Metropolitan Museum of Art, object 437658",
+  "url": "https://www.metmuseum.org/art/collection/search/437658"
+ },
+ "hokusai_wave": {
+  "title": "Under the Wave off Kanagawa",
+  "artist": "Katsushika Hokusai",
+  "date": "c. 1830-32",
+  "source": "The Metropolitan Museum of Art, object 45434",
+  "url": "https://www.metmuseum.org/art/collection/search/45434"
+ },
+ "starry_night": {
+  "title": "Wheat Field with Cypresses",
+  "artist": "Vincent van Gogh",
+  "date": "1889",
+  "source": "The Metropolitan Museum of Art, object 436535",
+  "url": "https://www.metmuseum.org/art/collection/search/436535"
+ },
+ "cezanne": {
+  "title": "Mont Sainte-Victoire",
+  "artist": "Paul Cézanne",
+  "date": "c. 1902-06",
+  "source": "The Metropolitan Museum of Art, object 435878",
+  "url": "https://www.metmuseum.org/art/collection/search/435878"
+ },
+ "munch_scream": {
+  "title": "The Scream (lithograph)",
+  "artist": "Edvard Munch",
+  "date": "1895",
+  "source": "The Metropolitan Museum of Art, object 340029",
+  "url": "https://www.metmuseum.org/art/collection/search/340029"
+ }
+}

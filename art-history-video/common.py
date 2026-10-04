@@ -10,6 +10,7 @@ from manim import *
 HERE = Path(__file__).parent
 AUDIO = HERE / "build" / "audio"
 ART = HERE / "assets" / "artworks"
+CREDITS = json.loads((ART / "credits.json").read_text()) if (ART / "credits.json").exists() else {}
 
 FONT = "CMU Serif"
 BG = "#1C1C1C"
@@ -207,7 +208,7 @@ def _icon(kind, w, h):
     return VGroup(hills, sun)
 
 
-def art_card(title, artist="", date="", slug=None, motif=None, kind="painting", w=3.0, h=3.4):
+def art_card(title, artist="", date="", slug=None, motif=None, kind="painting", w=3.8, h=4.2):
     """A framed artwork with a museum-style label.
 
     Uses assets/artworks/<slug>.jpg|png if present (public-domain image you
@@ -223,12 +224,15 @@ def art_card(title, artist="", date="", slug=None, motif=None, kind="painting", 
             if p.exists():
                 img = ImageMobject(str(p))
                 img.scale_to_fit_height(h - 0.2)
-                if img.width > w - 0.2:
-                    img.scale_to_fit_width(w - 0.2)
+                if img.width > 1.7 * w:  # let landscape images run wider than the default box
+                    img.scale_to_fit_width(1.7 * w)
                 frame = Rectangle(width=img.width + 0.16, height=img.height + 0.16,
                                   stroke_color=C_GOLD, stroke_width=3)
                 inner = Rectangle(width=img.width, height=img.height, stroke_width=0)
                 content = img
+                meta = CREDITS.get(slug)
+                if meta:  # caption must describe the object actually shown
+                    title, artist, date = meta["title"], meta["artist"], meta["date"] + "  ·  The Met"
                 break
     if content is None:
         content = motif if motif is not None else _icon(kind, w - 0.3, h - 0.3)
