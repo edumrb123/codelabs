@@ -1,0 +1,5 @@
+build/
+media/
+models
+*.mp4
+__pycache__/
